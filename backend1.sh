@@ -10,7 +10,7 @@ read mysql_root_password
 dnf module disable nodejs -y &>>$LOGFILE
 #VALIDATE $? "Disabling default nodejs"
 
-dnf module enables nodejs:20 -y &>>$LOGFILE
+dnf module enable nodejs:20 -y &>>$LOGFILE
 #VALIDATE $? "Enabling nodejs"
 
 dnf install nodejs -y &>>$LOGFILE
