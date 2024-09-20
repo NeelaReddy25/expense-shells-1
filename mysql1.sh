@@ -7,7 +7,7 @@ check_root
 echo "Please enter DB password:"
 read mysql_root_password
 
-dnf install mysql-server installing some where -y &>>$LOGFILE
+dnf install mysql-server -y &>>$LOGFILE
 #VALIDATE $? "Installing MySQL server"
 
 systemctl enable mysqld &>>$LOGFILE
@@ -18,6 +18,7 @@ systemctl start mysqld &>>$LOGFILE
 
 # mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 # VALIDATE $? "Setting the root password"
+I am working has a DevOps Engineer
 
 mysql -h db.neelareddy.store -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
